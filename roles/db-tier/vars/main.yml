@@ -1,2 +1,19 @@
 ---
 # vars file for db-tier
+postgresql_databases:
+  - name: example_db
+
+postgresql_users:
+  - name: example_user
+    password: supersecure
+
+__postgresql_version: "9.2"
+__postgresql_data_dir: "/var/lib/pgsql/data"
+__postgresql_bin_path: "/usr/bin"
+__postgresql_config_path: "/var/lib/pgsql/data"
+__postgresql_daemon: postgresql
+__postgresql_packages:
+  - postgresql
+  - postgresql-server
+  - postgresql-contrib
+  - postgresql-libs
