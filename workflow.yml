@@ -1,0 +1,26 @@
+- project: "Homework Assignment"
+  success:
+  - job_template: "Provision Prod Env"
+    success:
+    - inventory_source: "Three tier inventory source"
+      success:
+      - job_template: "Check the status of AWS instances"
+  - job_template: "Provision QA Env"
+    success:
+    - job_template: "3tier app deployment on QA Env"
+      success:
+      - job_template: "Smoke test QA Env"
+        failure:
+        - job_template: "Nuke QA Env"
+        success:
+        - inventory_source: "Three tier inventory source"
+          success:
+          - job_template: "SSH keys three tier app"
+            success:
+            - job_template: "3 tier app on Prod"
+              success:
+              - job_template: "Smoke test Prod env"
+             
+
+
+
